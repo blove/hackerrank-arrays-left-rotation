@@ -62,7 +62,7 @@ function getResultsUsingLoop() {
 //Solution using array.map()
 function getResultUsingArrayMap() {
   let result = data.map(function(value, index) {
-    let pos = index + d;
+    let pos = parseInt(index) + parseInt(d);
     if (pos > n-1) {
       pos = pos - n;
     }
@@ -74,7 +74,7 @@ function getResultUsingArrayMap() {
 
 //Solution using array.shift()
 function getResultsUsingArrayShift() {
-  let temp = datas.slice(0);
+  let temp = data.slice(0);
   for (let i=0; i<n-1; i++) {
     let first = temp.shift();
     temp.push(first);
