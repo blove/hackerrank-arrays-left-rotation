@@ -38,6 +38,7 @@ function main() {
 
   //output
   process.stdout.write(result.join(" "));
+  process.stdout.write("\n");
 }
 
 //Solution using for-loop
@@ -62,7 +63,7 @@ function getResultsUsingLoop() {
 //Solution using array.map()
 function getResultUsingArrayMap() {
   let result = data.map(function(value, index) {
-    let pos = parseInt(index) + parseInt(d);
+    let pos = parseInt(index) + parseInt(d - 1);
     if (pos > n-1) {
       pos = pos - n;
     }
@@ -75,7 +76,7 @@ function getResultUsingArrayMap() {
 //Solution using array.shift()
 function getResultsUsingArrayShift() {
   let temp = data.slice(0);
-  for (let i=0; i<n-1; i++) {
+  for (let i=0; i<d-1; i++) {
     let first = temp.shift();
     temp.push(first);
   }
